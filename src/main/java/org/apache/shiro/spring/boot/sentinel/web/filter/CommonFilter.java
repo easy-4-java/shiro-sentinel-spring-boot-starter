@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2018, hiwepy (https://github.com/hiwepy).
+ * Copyright (c) 2018, hiwepy (https://github.com/easy-4-java).
  *
  * Licensed under the Apache License, Version 2.0 (the "License"); you may not
  * use this file except in compliance with the License. You may obtain a copy of
@@ -43,7 +43,12 @@ import com.alibaba.csp.sentinel.util.StringUtil;
 
 /**
  * Access Control Filter that integrates with Sentinel.
+<<<<<<< Updated upstream
  * @author 		： <a href="https://github.com/hiwepy">hiwepy</a>
+=======
+ * @author 		： <a href="https://github.com/easy-4-java">hiwepy</a>
+ * @see {@link com.alibaba.csp.sentinel.adapter.servlet.CommonFilter}
+>>>>>>> Stashed changes
  */
 public class CommonFilter extends AccessControlFilter {
 
