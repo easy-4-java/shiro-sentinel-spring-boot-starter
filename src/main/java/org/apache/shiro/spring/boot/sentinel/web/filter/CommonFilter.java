@@ -17,12 +17,12 @@ package org.apache.shiro.spring.boot.sentinel.web.filter;
 
 import java.io.IOException;
 
-import javax.servlet.FilterChain;
-import javax.servlet.ServletException;
-import javax.servlet.ServletRequest;
-import javax.servlet.ServletResponse;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
+import jakarta.servlet.FilterChain;
+import jakarta.servlet.ServletException;
+import jakarta.servlet.ServletRequest;
+import jakarta.servlet.ServletResponse;
+import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 
 import org.apache.shiro.biz.utils.WebUtils;
 import org.apache.shiro.web.filter.AccessControlFilter;
@@ -43,7 +43,7 @@ import com.alibaba.csp.sentinel.util.StringUtil;
 
 /**
  * Access Control Filter that integrates with Sentinel.
- * @author 		： <a href="https://github.com/hiwepy">hiwepy</a>
+ * @author [@Loong Wan](https://github.com/loong10k)
  * @see {@link com.alibaba.csp.sentinel.adapter.servlet.CommonFilter}
  */
 public class CommonFilter extends AccessControlFilter {
