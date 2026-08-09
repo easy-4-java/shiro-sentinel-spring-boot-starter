@@ -491,8 +491,6 @@
         <maven-surefire-plugin.version>3.5.2</maven-surefire-plugin.version>
         <maven-nexus-staging-plugin.version>1.6.8</maven-nexus-staging-plugin.version>
         <sentinel.version>1.8.1</sentinel.version>
-        <shiro.version>1.7.1</shiro.version>
-        <shiro-biz.version>3.0.x.20260630-SNAPSHOT</shiro-biz.version>
     </properties> 
 
     <dependencies>
@@ -569,19 +567,6 @@
             <version>${sentinel.version}</version>
         </dependency>
         
-        <!-- https://mvnrepository.com/artifact/com.alibaba.csp/sentinel-web-servlet -->
-        <dependency>
-            <groupId>com.alibaba.csp</groupId>
-            <artifactId>sentinel-web-servlet</artifactId>
-            <version>${sentinel.version}</version>
-        </dependency>
-        
-        <!-- Source: https://github.com/easy-4-java/shiro-biz — easy4j shiro-biz -->
-        <dependency>
-            <groupId>io.github.easy4j</groupId>
-            <artifactId>shiro-biz</artifactId>
-            <version>${shiro-biz.version}</version>
-        </dependency>
 
     </dependencies>
 

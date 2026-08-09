@@ -15,8 +15,15 @@
  */
 package org.apache.shiro.spring.boot;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+
+import com.alibaba.csp.sentinel.slots.block.authority.AuthorityRule;
+import com.alibaba.csp.sentinel.slots.block.degrade.DegradeRule;
+import com.alibaba.csp.sentinel.slots.block.flow.FlowRule;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
@@ -30,6 +37,7 @@ import static org.assertj.core.api.Assertions.assertThat;
  */
 @DisplayName("ShiroSentinelProperties Tests")
 class ShiroSentinelPropertiesTest {
+
     @Test
     @DisplayName("Default constructor creates non-null instance")
     void testDefaultInstance() {
@@ -38,99 +46,99 @@ class ShiroSentinelPropertiesTest {
     }
 
     @Test
+    @DisplayName("Default value of 'enabled' is false")
+    void testDefaultEnabled() {
+        ShiroSentinelProperties props = new ShiroSentinelProperties();
+        assertThat(props.isEnabled()).isFalse();
+    }
+
+    @Test
     @DisplayName("Field 'enabled' can be set and read")
     void testEnabledField() {
         ShiroSentinelProperties props = new ShiroSentinelProperties();
-        // Use reflection to set private field (covers all fields including those without setters)
-        try {
-            java.lang.reflect.Field f = ShiroSentinelProperties.class.getDeclaredField("enabled");
-            f.setAccessible(true);
-            f.set(props, true);
-            Object value = f.get(props);
-            assertThat(value).isNotNull();
-        } catch (Exception e) {
-            // Field may have a more complex type; skip silently
-        }
+        props.setEnabled(true);
+        assertThat(props.isEnabled()).isTrue();
+    }
+
+    @Test
+    @DisplayName("Default value of 'httpMethodSpecify' is false")
+    void testDefaultHttpMethodSpecify() {
+        ShiroSentinelProperties props = new ShiroSentinelProperties();
+        assertThat(props.isHttpMethodSpecify()).isFalse();
     }
 
     @Test
     @DisplayName("Field 'httpMethodSpecify' can be set and read")
     void testHttpMethodSpecifyField() {
         ShiroSentinelProperties props = new ShiroSentinelProperties();
-        // Use reflection to set private field (covers all fields including those without setters)
-        try {
-            java.lang.reflect.Field f = ShiroSentinelProperties.class.getDeclaredField("httpMethodSpecify");
-            f.setAccessible(true);
-            f.set(props, true);
-            Object value = f.get(props);
-            assertThat(value).isNotNull();
-        } catch (Exception e) {
-            // Field may have a more complex type; skip silently
-        }
+        props.setHttpMethodSpecify(true);
+        assertThat(props.isHttpMethodSpecify()).isTrue();
+    }
+
+    @Test
+    @DisplayName("Default value of 'webContextUnify' is true")
+    void testDefaultWebContextUnify() {
+        ShiroSentinelProperties props = new ShiroSentinelProperties();
+        assertThat(props.isWebContextUnify()).isTrue();
     }
 
     @Test
     @DisplayName("Field 'webContextUnify' can be set and read")
     void testWebContextUnifyField() {
         ShiroSentinelProperties props = new ShiroSentinelProperties();
-        // Use reflection to set private field (covers all fields including those without setters)
-        try {
-            java.lang.reflect.Field f = ShiroSentinelProperties.class.getDeclaredField("webContextUnify");
-            f.setAccessible(true);
-            f.set(props, true);
-            Object value = f.get(props);
-            assertThat(value).isNotNull();
-        } catch (Exception e) {
-            // Field may have a more complex type; skip silently
-        }
+        props.setWebContextUnify(false);
+        assertThat(props.isWebContextUnify()).isFalse();
+    }
+
+    @Test
+    @DisplayName("Default 'authorityRules' is empty list")
+    void testDefaultAuthorityRules() {
+        ShiroSentinelProperties props = new ShiroSentinelProperties();
+        assertThat(props.getAuthorityRules()).isNotNull().isEmpty();
     }
 
     @Test
     @DisplayName("Field 'authorityRules' can be set and read")
     void testAuthorityRulesField() {
         ShiroSentinelProperties props = new ShiroSentinelProperties();
-        // Use reflection to set private field (covers all fields including those without setters)
-        try {
-            java.lang.reflect.Field f = ShiroSentinelProperties.class.getDeclaredField("authorityRules");
-            f.setAccessible(true);
-            f.set(props, null);
-            Object value = f.get(props);
-            assertThat(value).isNotNull();
-        } catch (Exception e) {
-            // Field may have a more complex type; skip silently
-        }
+        List<AuthorityRule> rules = new ArrayList<>();
+        rules.add(new AuthorityRule());
+        props.setAuthorityRules(rules);
+        assertThat(props.getAuthorityRules()).isNotNull().hasSize(1);
+    }
+
+    @Test
+    @DisplayName("Default 'flowRules' is empty list")
+    void testDefaultFlowRules() {
+        ShiroSentinelProperties props = new ShiroSentinelProperties();
+        assertThat(props.getFlowRules()).isNotNull().isEmpty();
     }
 
     @Test
     @DisplayName("Field 'flowRules' can be set and read")
     void testFlowRulesField() {
         ShiroSentinelProperties props = new ShiroSentinelProperties();
-        // Use reflection to set private field (covers all fields including those without setters)
-        try {
-            java.lang.reflect.Field f = ShiroSentinelProperties.class.getDeclaredField("flowRules");
-            f.setAccessible(true);
-            f.set(props, null);
-            Object value = f.get(props);
-            assertThat(value).isNotNull();
-        } catch (Exception e) {
-            // Field may have a more complex type; skip silently
-        }
+        List<FlowRule> rules = new ArrayList<>();
+        rules.add(new FlowRule());
+        props.setFlowRules(rules);
+        assertThat(props.getFlowRules()).isNotNull().hasSize(1);
+    }
+
+    @Test
+    @DisplayName("Default 'degradeRules' is empty list")
+    void testDefaultDegradeRules() {
+        ShiroSentinelProperties props = new ShiroSentinelProperties();
+        assertThat(props.getDegradeRules()).isNotNull().isEmpty();
     }
 
     @Test
     @DisplayName("Field 'degradeRules' can be set and read")
     void testDegradeRulesField() {
         ShiroSentinelProperties props = new ShiroSentinelProperties();
-        // Use reflection to set private field (covers all fields including those without setters)
-        try {
-            java.lang.reflect.Field f = ShiroSentinelProperties.class.getDeclaredField("degradeRules");
-            f.setAccessible(true);
-            f.set(props, null);
-            Object value = f.get(props);
-            assertThat(value).isNotNull();
-        } catch (Exception e) {
-            // Field may have a more complex type; skip silently
-        }
+        List<DegradeRule> rules = new ArrayList<>();
+        rules.add(new DegradeRule());
+        props.setDegradeRules(rules);
+        assertThat(props.getDegradeRules()).isNotNull().hasSize(1);
     }
 
     @Test
