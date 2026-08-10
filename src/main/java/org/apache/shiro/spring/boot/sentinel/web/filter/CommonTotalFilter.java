@@ -38,7 +38,7 @@ import com.alibaba.csp.sentinel.slots.block.BlockException;
 
 /**                
  * Access Control Filter for all requests.
- * @author [@Loong Wan](https://github.com/loong10k)
+ * @author <a href="https://github.com/loong10k">Loong Wan</a>
  */
 public class CommonTotalFilter extends AccessControlFilter {
 
