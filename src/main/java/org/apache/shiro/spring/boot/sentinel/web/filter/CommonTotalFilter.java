@@ -37,7 +37,7 @@ import com.alibaba.csp.sentinel.slots.block.BlockException;
  * Servlet filter for all requests that integrates with Sentinel for rate limiting.
  * This is a Jakarta Servlet compatible version of the Sentinel CommonTotalFilter.
  *
- * @author [@Loong Wan](https://github.com/loong10k)
+ * @author <a href="https://github.com/loong10k">Loong Wan</a>
  * @since 1.0.0
  * @see com.alibaba.csp.sentinel.adapter.servlet.CommonTotalFilter
  */

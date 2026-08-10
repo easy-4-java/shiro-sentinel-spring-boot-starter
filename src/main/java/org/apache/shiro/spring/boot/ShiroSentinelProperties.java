@@ -26,7 +26,7 @@ import com.alibaba.csp.sentinel.slots.block.flow.FlowRule;
 
 
 @ConfigurationProperties(ShiroSentinelProperties.PREFIX)
-/**\n * Configuration properties for Shiro Sentinel.\n *\n * @author [@Loong Wan](https://github.com/loong10k)\n * @since 1.0.0\n */
+/**\n * Configuration properties for Shiro Sentinel.\n *\n * @author <a href="https://github.com/loong10k">Loong Wan</a>\n * @since 1.0.0\n */
 public class ShiroSentinelProperties{
 
 	public static final String PREFIX = "shiro.sentinel";

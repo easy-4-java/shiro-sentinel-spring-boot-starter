@@ -26,7 +26,7 @@ import com.alibaba.csp.sentinel.slots.block.flow.FlowRuleManager;
 @ConditionalOnClass(SphU.class)
 @ConditionalOnProperty(prefix = ShiroSentinelProperties.PREFIX, value = "enabled", havingValue = "true")
 @EnableConfigurationProperties(ShiroSentinelProperties.class)
-/**\n * Auto-configuration for Shiro Sentinel rate limiting integration.\n *\n * @author [@Loong Wan](https://github.com/loong10k)\n * @since 1.0.0\n */
+/**\n * Auto-configuration for Shiro Sentinel rate limiting integration.\n *\n * @author <a href="https://github.com/loong10k">Loong Wan</a>\n * @since 1.0.0\n */
 public class ShiroSentinelAutoConfiguration implements InitializingBean  {
 	
 	@Bean("origin-sentinel")
