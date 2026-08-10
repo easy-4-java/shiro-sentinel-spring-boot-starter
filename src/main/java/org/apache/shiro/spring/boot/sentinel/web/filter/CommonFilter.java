@@ -43,7 +43,7 @@ import com.alibaba.csp.sentinel.util.StringUtil;
 
 /**
  * Access Control Filter that integrates with Sentinel.
- * @author [@Loong Wan](https://github.com/loong10k)
+ * @author <a href="https://github.com/loong10k">Loong Wan</a>
  * @see {@link com.alibaba.csp.sentinel.adapter.servlet.CommonFilter}
  */
 public class CommonFilter extends AccessControlFilter {
