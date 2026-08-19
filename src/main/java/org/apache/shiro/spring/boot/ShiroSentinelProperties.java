@@ -43,50 +43,110 @@ public class ShiroSentinelProperties{
 	
 	private List<DegradeRule> degradeRules = new ArrayList<>();
 
+	/**
+	 * Returns the enabled.
+	 *
+	 * @return the enabled
+	 */
 	public boolean isEnabled() {
 		return enabled;
 	}
 
+	/**
+	 * Sets the enabled.
+	 *
+	 * @param enabled the enabled
+	 */
 	public void setEnabled(boolean enabled) {
 		this.enabled = enabled;
 	}
 
+	/**
+	 * Returns the http method specify.
+	 *
+	 * @return the http method specify
+	 */
 	public boolean isHttpMethodSpecify() {
 		return httpMethodSpecify;
 	}
 
+	/**
+	 * Sets the http method specify.
+	 *
+	 * @param httpMethodSpecify the http method specify
+	 */
 	public void setHttpMethodSpecify(boolean httpMethodSpecify) {
 		this.httpMethodSpecify = httpMethodSpecify;
 	}
 
+	/**
+	 * Returns the web context unify.
+	 *
+	 * @return the web context unify
+	 */
 	public boolean isWebContextUnify() {
 		return webContextUnify;
 	}
 
+	/**
+	 * Sets the web context unify.
+	 *
+	 * @param webContextUnify the web context unify
+	 */
 	public void setWebContextUnify(boolean webContextUnify) {
 		this.webContextUnify = webContextUnify;
 	}
 
+	/**
+	 * Returns the authority rules.
+	 *
+	 * @return the authority rules
+	 */
 	public List<AuthorityRule> getAuthorityRules() {
 		return authorityRules;
 	}
 
+	/**
+	 * Sets the authority rules.
+	 *
+	 * @param authorityRules the authority rules
+	 */
 	public void setAuthorityRules(List<AuthorityRule> authorityRules) {
 		this.authorityRules = authorityRules;
 	}
 
+	/**
+	 * Returns the flow rules.
+	 *
+	 * @return the flow rules
+	 */
 	public List<FlowRule> getFlowRules() {
 		return flowRules;
 	}
 
+	/**
+	 * Sets the flow rules.
+	 *
+	 * @param flowRules the flow rules
+	 */
 	public void setFlowRules(List<FlowRule> flowRules) {
 		this.flowRules = flowRules;
 	}
 
+	/**
+	 * Returns the degrade rules.
+	 *
+	 * @return the degrade rules
+	 */
 	public List<DegradeRule> getDegradeRules() {
 		return degradeRules;
 	}
 
+	/**
+	 * Sets the degrade rules.
+	 *
+	 * @param degradeRules the degrade rules
+	 */
 	public void setDegradeRules(List<DegradeRule> degradeRules) {
 		this.degradeRules = degradeRules;
 	}

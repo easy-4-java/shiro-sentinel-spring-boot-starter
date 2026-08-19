@@ -54,11 +54,24 @@ public class CommonTotalFilter implements Filter {
     public static final String WEB_SERVLET_CONTEXT_NAME = "sentinel_web_servlet_context";
 
     @Override
+    /**
+     * init.
+     *
+     * @param filterConfig the filter config
+     * @throws ServletException if an error occurs
+     */
     public void init(FilterConfig filterConfig) throws ServletException {
         // no-op
     }
 
     @Override
+    /**
+     * do Filter.
+     *
+     * @param request the request
+     * @param response the response
+     * @param chain the chain
+     */
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
             throws IOException, ServletException {
 
@@ -84,6 +97,10 @@ public class CommonTotalFilter implements Filter {
     }
 
     @Override
+    /**
+     * destroy.
+     *
+     */
     public void destroy() {
         // no-op
     }

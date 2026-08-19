@@ -58,6 +58,11 @@ public class ShiroSentinelAutoConfiguration implements InitializingBean  {
 	private ShiroSentinelProperties shiroSentinelProperties;
 	
 	@Override
+	/**
+	 * after Properties Set.
+	 *
+	 * @throws Exception if an error occurs
+	 */
 	public void afterPropertiesSet() throws Exception {
 		if(!CollectionUtils.isEmpty(authorityRules)) {
 			authorityRules.addAll(shiroSentinelProperties.getAuthorityRules());

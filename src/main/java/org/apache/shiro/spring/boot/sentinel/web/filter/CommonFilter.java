@@ -67,6 +67,12 @@ public class CommonFilter implements Filter {
     private boolean webContextUnify = true;
 
     @Override
+    /**
+     * init.
+     *
+     * @param filterConfig the filter config
+     * @throws ServletException if an error occurs
+     */
     public void init(FilterConfig filterConfig) throws ServletException {
         String httpMethodSpecifyParam = filterConfig.getInitParameter(HTTP_METHOD_SPECIFY);
         if (httpMethodSpecifyParam != null) {
@@ -79,6 +85,13 @@ public class CommonFilter implements Filter {
     }
 
     @Override
+    /**
+     * do Filter.
+     *
+     * @param request the request
+     * @param response the response
+     * @param chain the chain
+     */
     public void doFilter(ServletRequest request, ServletResponse response, FilterChain chain)
             throws IOException, ServletException {
 
@@ -116,6 +129,10 @@ public class CommonFilter implements Filter {
     }
 
     @Override
+    /**
+     * destroy.
+     *
+     */
     public void destroy() {
         // no-op
     }
@@ -150,18 +167,38 @@ public class CommonFilter implements Filter {
         response.getWriter().write("Blocked by Sentinel: " + e.getRule().getResource());
     }
 
+    /**
+     * Returns the http method specify.
+     *
+     * @return the http method specify
+     */
     public boolean isHttpMethodSpecify() {
         return httpMethodSpecify;
     }
 
+    /**
+     * Sets the http method specify.
+     *
+     * @param httpMethodSpecify the http method specify
+     */
     public void setHttpMethodSpecify(boolean httpMethodSpecify) {
         this.httpMethodSpecify = httpMethodSpecify;
     }
 
+    /**
+     * Returns the web context unify.
+     *
+     * @return the web context unify
+     */
     public boolean isWebContextUnify() {
         return webContextUnify;
     }
 
+    /**
+     * Sets the web context unify.
+     *
+     * @param webContextUnify the web context unify
+     */
     public void setWebContextUnify(boolean webContextUnify) {
         this.webContextUnify = webContextUnify;
     }
